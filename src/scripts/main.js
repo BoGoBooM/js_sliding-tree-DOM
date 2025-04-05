@@ -19,6 +19,10 @@ head.forEach((li) => {
     li.replaceChild(wrap, childText);
 
     wrap.addEventListener('click', (e) => {
+      if (e.target !== wrap) {
+        return;
+      }
+
       if (nestedList) {
         nestedList.hidden = !nestedList.hidden;
       }
